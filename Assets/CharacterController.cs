@@ -16,7 +16,8 @@ public class CharacterController : MonoBehaviour
     private float idleTime;
     public ParticleSystem particles;
     public float attackRadius = .2f;
-
+    public bool following = true;
+    public int framesSinceFroze = 60;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,11 +32,21 @@ public class CharacterController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
-        if (Input.GetKeyDown(KeyCode.Q))
+        if (Input.GetKeyDown(KeyCode.M))
         {
             print("wow");
             particles.Play();
             attack();
+        }
+
+        if (Input.GetKeyDown(KeyCode.N))
+        {
+            following = false;
+        }
+        if (Input.GetKeyUp(KeyCode.N))
+        {
+            following = true;
+            framesSinceFroze = 0;
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -82,14 +93,34 @@ public class CharacterController : MonoBehaviour
     void FixedUpdate()
     {
         Rigidbody2D charRB = character.GetComponent<Rigidbody2D>();
-        charRB.MovePosition(charRB.position + new Vector2(h, v) * Time.fixedDeltaTime * speed);
+        Vector2 dir = new Vector2(h, v);
+        dir.Normalize();
+        charRB.MovePosition(charRB.position + dir * Time.fixedDeltaTime * speed);
 
-         float yDiff = (charRB.position.y - ball.transform.position.y)+1+idleOffsetY;
-         float xDiff = (charRB.position.x - ball.transform.position.x)+idleOffsetX;
-    //     ball.transform.position = new Vector3 (ball.transform.position.x + xDiff/20, ball.transform.position.y + yDiff/20, ball.transform.position.z);
-    
-        Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
-        ballRB.AddForce(new Vector2(xDiff*4,yDiff*4));
+        if (following) {
+            float yDiff = (charRB.position.y - ball.transform.position.y)+1+idleOffsetY;
+            float xDiff = (charRB.position.x - ball.transform.position.x)+idleOffsetX;
+        //     ball.transform.position = new Vector3 (ball.transform.position.x + xDiff/20, ball.transform.position.y + yDiff/20, ball.transform.position.z);
+        
+            Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
+            ballRB.AddForce(new Vector2(xDiff*4,yDiff*4));
+
+
+            if (framesSinceFroze < 1)
+            {
+                // ballRB.AddForce(new Vector2(xDiff*8,yDiff*8)); //add the force again for an initial boost!
+                Vector2 angle = new Vector2(xDiff, yDiff);
+                angle.Normalize();
+                ballRB.AddForce(angle*500);
+                
+                framesSinceFroze += 1;
+            }
+        }
+        else
+        {
+            Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
+            ballRB.velocity = (new Vector2(0,0));
+        }
     }
 
     void attack()
