@@ -15,15 +15,23 @@ public class CharacterController : MonoBehaviour
     private float idleOffsetY;
     private float idleTime;
     public ParticleSystem particles;
+    public ParticleSystem charging;
+    public ParticleSystem charged;
     public float attackRadius = .2f;
     public bool following = true;
     public int framesSinceFroze = 60;
+    private float chargedTime = 0;
+    private bool isCharged = false;
+    public Color inactiveIndicatorColor;
+    public Color chargedIndicatorColor;
     // Start is called before the first frame update
     void Start()
     {
         character = transform.Find("Person").gameObject;
         ball = transform.Find("Ball").gameObject;
         particles = ball.transform.Find("Particle System").gameObject.GetComponent<ParticleSystem>();
+        charging = ball.transform.Find("charging").gameObject.GetComponent<ParticleSystem>();
+        charged = ball.transform.Find("charged").gameObject.GetComponent<ParticleSystem>();
     }
 
     // Update is called once per frame
@@ -42,11 +50,28 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.N))
         {
             following = false;
+            charging.Play();
         }
         if (Input.GetKeyUp(KeyCode.N))
         {
             following = true;
             framesSinceFroze = 0;
+
+            charging.Stop();
+        }
+
+        if (!following)
+        {
+            chargedTime += Time.deltaTime;
+
+            if (!isCharged && chargedTime > 1)
+            {
+                isCharged = true;
+                charged.Play();
+                charging.Stop();
+
+                character.transform.Find("Indicator").GetComponent<SpriteRenderer>().color = chargedIndicatorColor;
+            }
         }
 
         if (Input.GetKeyDown(KeyCode.E))
@@ -57,10 +82,12 @@ public class CharacterController : MonoBehaviour
         if (h==0 && v==0)
         {
             idleTime += Time.deltaTime;
+            character.GetComponent<Animator>().SetBool("running", false);
         }
         else
         {
             idleTime = 0;
+            character.GetComponent<Animator>().SetBool("running", true);
         }
         
         if (idleTime > 5)
@@ -88,6 +115,14 @@ public class CharacterController : MonoBehaviour
             idleOffsetY = 0;
         }
 
+        if (Input.GetAxisRaw("Horizontal") == -1)
+        {
+            character.transform.localScale = new Vector3(-1f, 1f, 1f);
+        }
+        else if (Input.GetAxisRaw("Horizontal") == 1)
+        {
+            character.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
     }
 
     void FixedUpdate()
@@ -111,7 +146,19 @@ public class CharacterController : MonoBehaviour
                 // ballRB.AddForce(new Vector2(xDiff*8,yDiff*8)); //add the force again for an initial boost!
                 Vector2 angle = new Vector2(xDiff, yDiff);
                 angle.Normalize();
-                ballRB.AddForce(angle*500);
+
+                if (isCharged)
+                {
+                    ballRB.AddForce(angle*700);
+                }
+                else
+                {
+                    ballRB.AddForce(angle*350*chargedTime);
+                }
+
+                chargedTime = 0;
+                isCharged = false;
+                character.transform.Find("Indicator").GetComponent<SpriteRenderer>().color = inactiveIndicatorColor;
                 
                 framesSinceFroze += 1;
             }
