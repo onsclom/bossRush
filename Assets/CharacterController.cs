@@ -17,13 +17,20 @@ public class CharacterController : MonoBehaviour
     public ParticleSystem particles;
     public ParticleSystem charging;
     public ParticleSystem charged;
-    public float attackRadius = .2f;
+    public float attackRadius = .5f;
     public bool following = true;
     public int framesSinceFroze = 60;
     private float chargedTime = 0;
     private bool isCharged = false;
     public Color inactiveIndicatorColor;
     public Color chargedIndicatorColor;
+    private float attackingTime = 0;
+    public SimpleCameraShakeInCinemachine sceenShake;
+    public Transform enemyManager;
+
+    public int health = 4;
+    public float invincibleTime = 0;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +47,20 @@ public class CharacterController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
+        attackingTime += Time.deltaTime;
+
         if (Input.GetKeyDown(KeyCode.M))
         {
             print("wow");
             particles.Play();
+
+            attackingTime = 0;
+
+            sceenShake.setShake();
+        }
+
+        if (attackingTime < .5)
+        {
             attack();
         }
 
@@ -77,6 +94,8 @@ public class CharacterController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             GameObject newEnemy = Instantiate(enemy, new Vector2(0,4), Quaternion.identity);
+            newEnemy.transform.parent = enemyManager.transform;
+            newEnemy.SetActive(true);
         }
 
         if (h==0 && v==0)
@@ -122,6 +141,21 @@ public class CharacterController : MonoBehaviour
         else if (Input.GetAxisRaw("Horizontal") == 1)
         {
             character.transform.localScale = new Vector3(1f, 1f, 1f);
+        }
+
+        if (invincibleTime > 0)
+        {
+            invincibleTime -= Time.deltaTime;
+
+            var cur = character.GetComponent<SpriteRenderer>().color;
+            cur.a = .5f;
+            character.GetComponent<SpriteRenderer>().color = cur;
+        }
+        else
+        {
+            var cur = character.GetComponent<SpriteRenderer>().color;
+            cur.a = 1f;
+            character.GetComponent<SpriteRenderer>().color = cur;
         }
     }
 
@@ -172,11 +206,33 @@ public class CharacterController : MonoBehaviour
 
     void attack()
     {
-        Collider2D cur = Physics2D.OverlapCircle(ball.transform.position,  attackRadius, LayerMask.GetMask("enemy"));
-        if (cur != null)
+        Collider2D[] cur = Physics2D.OverlapCircleAll(ball.transform.position,  attackRadius, LayerMask.GetMask("enemy"));
+        
+        foreach (Collider2D collision in cur)
         {
-            Destroy(cur.gameObject);
+            collision.gameObject.GetComponent<EnemyScript>().hit(ball);
+            // here maybe call enemy script damage function??
         }
     }
 
+    public void hit(Transform hitter)
+    {
+        if (invincibleTime > 0)
+            return;
+
+        float xDiff = hitter.position.x - character.transform.position.x;
+        float yDiff = hitter.position.y - character.transform.position.y;
+    
+        print(yDiff+" "+xDiff);
+
+        Vector2 dir = new Vector2(xDiff, yDiff);
+
+        dir.Normalize();
+
+        character.GetComponent<Rigidbody2D>().AddForce(dir * -1200);
+
+        invincibleTime = 2;
+
+        health -= 1;
+    }
 }

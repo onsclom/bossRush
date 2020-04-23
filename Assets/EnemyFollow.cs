@@ -14,8 +14,13 @@ public class EnemyFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        transform.position = Vector2.MoveTowards(transform.position, player.position, speed*Time.deltaTime);
+        float dist = Vector2.Distance(player.position, transform.position);
+
+        if (dist < 5 || gameObject.GetComponent<EnemyScript>().health < 2)
+            transform.position = Vector2.MoveTowards(transform.position, player.position, speed*Time.deltaTime);
+        else
+            transform.position = Vector2.MoveTowards(transform.position, player.position, 0*Time.deltaTime);
     }
 }
