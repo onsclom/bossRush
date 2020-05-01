@@ -31,6 +31,8 @@ public class CharacterController : MonoBehaviour
     public int health = 4;
     public float invincibleTime = 0;
 
+    public float curMana = 100f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -57,6 +59,20 @@ public class CharacterController : MonoBehaviour
             attackingTime = 0;
 
             sceenShake.setShake();
+        }
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            //switch locations teleport thing
+            if (curMana >= 20f)
+            {
+                Vector3 oldOrbPos = ball.transform.position;
+                ball.transform.position = character.transform.position;
+                character.transform.position = oldOrbPos;
+
+                ball.GetComponent<TrailRenderer>().Clear();
+
+                curMana -= 20;
+            }
         }
 
         if (attackingTime < .5)
@@ -157,6 +173,11 @@ public class CharacterController : MonoBehaviour
             cur.a = 1f;
             character.GetComponent<SpriteRenderer>().color = cur;
         }
+
+        curMana += Time.deltaTime*4;
+
+        curMana = Mathf.Min(100f, curMana);
+        curMana = Mathf.Max(0f, curMana);
     }
 
     void FixedUpdate()
