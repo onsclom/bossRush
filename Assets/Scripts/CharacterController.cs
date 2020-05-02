@@ -33,9 +33,13 @@ public class CharacterController : MonoBehaviour
 
     public float curMana = 100f;
 
+    private bool ranOut = false;
+    private HashSet<GameObject> thingsHit;
+
     // Start is called before the first frame update
     void Start()
     {
+        thingsHit = new HashSet<GameObject>();
         character = transform.Find("Person").gameObject;
         ball = transform.Find("Ball").gameObject;
         particles = ball.transform.Find("Particle System").gameObject.GetComponent<ParticleSystem>();
@@ -53,12 +57,14 @@ public class CharacterController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.M))
         {
-            print("wow");
-            particles.Play();
-
-            attackingTime = 0;
-
-            sceenShake.setShake();
+            if (curMana>= 33)
+            {
+                particles.Play();
+                attackingTime = 0;
+                sceenShake.setShake();
+                curMana -= 33;
+                thingsHit = new HashSet<GameObject>();
+            }
         }
         if (Input.GetKeyDown(KeyCode.B))
         {
@@ -82,8 +88,11 @@ public class CharacterController : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.N))
         {
-            following = false;
-            charging.Play();
+            if (curMana > 0)
+            {
+                following = false;
+                charging.Play();
+            }
         }
         if (Input.GetKeyUp(KeyCode.N))
         {
@@ -174,7 +183,7 @@ public class CharacterController : MonoBehaviour
             character.GetComponent<SpriteRenderer>().color = cur;
         }
 
-        curMana += Time.deltaTime*4;
+        curMana += Time.deltaTime*20;
 
         curMana = Mathf.Min(100f, curMana);
         curMana = Mathf.Max(0f, curMana);
@@ -182,6 +191,7 @@ public class CharacterController : MonoBehaviour
 
     void FixedUpdate()
     {
+        Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
         Rigidbody2D charRB = character.GetComponent<Rigidbody2D>();
         Vector2 dir = new Vector2(h, v);
         dir.Normalize();
@@ -192,7 +202,7 @@ public class CharacterController : MonoBehaviour
             float xDiff = (charRB.position.x - ball.transform.position.x)+idleOffsetX;
         //     ball.transform.position = new Vector3 (ball.transform.position.x + xDiff/20, ball.transform.position.y + yDiff/20, ball.transform.position.z);
         
-            Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
+
             ballRB.AddForce(new Vector2(xDiff*4,yDiff*4));
 
 
@@ -202,14 +212,17 @@ public class CharacterController : MonoBehaviour
                 Vector2 angle = new Vector2(xDiff, yDiff);
                 angle.Normalize();
 
-                if (isCharged)
+                if (isCharged && !ranOut)
                 {
                     ballRB.AddForce(angle*700);
+                    ballRB.drag = 1;
                 }
-                else
+                else if (!ranOut)
                 {
                     ballRB.AddForce(angle*350*chargedTime);
                 }
+
+                ranOut = false;
 
                 chargedTime = 0;
                 isCharged = false;
@@ -220,8 +233,25 @@ public class CharacterController : MonoBehaviour
         }
         else
         {
-            Rigidbody2D ballRB = ball.GetComponent<Rigidbody2D>();
             ballRB.velocity = (new Vector2(0,0));
+
+            curMana -= Time.deltaTime*30;
+
+            curMana = Mathf.Max(curMana, 0);
+
+            if (curMana == 0)
+            {
+                ranOut = true;
+                following = true;
+                charging.Stop();
+            }
+        }
+
+        if (ballRB.drag < 1.5)
+        {
+            ballRB.drag += (float)Time.deltaTime*.3f;
+            ballRB.drag = Mathf.Min(1.5f, ballRB.drag);
+            print(ballRB.drag);
         }
     }
 
@@ -231,8 +261,11 @@ public class CharacterController : MonoBehaviour
         
         foreach (Collider2D collision in cur)
         {
-            collision.gameObject.GetComponent<EnemyScript>().hit(ball);
-            // here maybe call enemy script damage function??
+            if ( thingsHit.Contains(collision.gameObject) == false )
+            {
+                thingsHit.Add(collision.gameObject);
+                collision.gameObject.GetComponent<EnemyScript>().hit(ball);
+            }
         }
     }
 

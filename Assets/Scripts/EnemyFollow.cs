@@ -22,22 +22,21 @@ public class EnemyFollow : MonoBehaviour
     {
         float dist = Vector2.Distance(player.position, transform.position);
 
-        if (dist < 5 || gameObject.GetComponent<EnemyScript>().health < 2)
-            transform.position = Vector2.MoveTowards(transform.position, player.position, speed*Time.deltaTime);
+        transform.position = Vector2.MoveTowards(transform.position, player.position, speed*Time.deltaTime);
+        
+        /*
         else
         {
             if (transform.position.x == targetLocation.x && transform.position.y == targetLocation.y )
             {
-                print("wow they are ==");
                 targetLocation = new Vector3 (startLocation.x + Random.Range(-randomWalkRange, randomWalkRange), startLocation.y + Random.Range(-randomWalkRange, randomWalkRange), transform.position.z );
             }
             else
             {
-                print("following with speed: " + speed);
-                print(transform.position + " " + targetLocation);
             }
 
             transform.position = Vector2.MoveTowards(transform.position, targetLocation, speed*Time.deltaTime);
         }
+        */
     }
 }

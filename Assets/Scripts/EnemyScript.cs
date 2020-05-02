@@ -6,8 +6,6 @@ public class EnemyScript : MonoBehaviour
 {
     public float health;
     public float maxHealth;
-    // Start is called before the first frame update
-    public float lastHitTime;
 
     public string bossName;
     public int maxSize = 400;
@@ -15,29 +13,45 @@ public class EnemyScript : MonoBehaviour
 
     public RectTransform healthBar;
 
+    public float spawnTime;
+
+    public float timeSinceHit;
+
 
     void Start()
     {
+        timeSinceHit = 1;
+
         if (health == 0)
         {
             health = 2;
         }
-        lastHitTime = 1;
 
         maxHealth = health;
+
+        bossHealthUI = GameObject.Find("GameManager").transform.Find("UI").Find("Boss Bar").gameObject;
+        healthBar = GameObject.Find("GameManager").transform.Find("UI").Find("Boss Bar").Find("Health").gameObject.GetComponent<RectTransform>();
+    
     }
 
     // Update is called once per frame
     void Update()
-    {  
-       lastHitTime += Time.deltaTime; 
+    {
+        timeSinceHit += Time.deltaTime;
+
+        if (timeSinceHit < .2)
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.red;
+        }
+        else
+        {
+            gameObject.GetComponent<SpriteRenderer>().color = Color.white;
+        }
     }
 
     public void hit(GameObject orb)
     {
-
-        if (lastHitTime < 1)
-            return;
+        timeSinceHit = 0;
 
         health -= 1;
 
@@ -58,16 +72,13 @@ public class EnemyScript : MonoBehaviour
 
         gameObject.GetComponent<Rigidbody2D>().AddForce(dir * -200);
 
-        lastHitTime = 0;
-
 
         if (health == 0)
         {
-            var particles = 
-            Instantiate(transform.parent.gameObject.GetComponent<EnemyManager>().deathParticles, transform.position, Quaternion.identity);
+            var particles = transform.Find("Particle System").gameObject;
             particles.transform.parent=transform.parent;
             particles.GetComponent<ParticleSystem>().Play();
-            
+
             Destroy(gameObject);
 
             if (bossName != "")
