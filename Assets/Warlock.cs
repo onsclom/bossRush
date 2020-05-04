@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class Warlock : MonoBehaviour
+
 {
     public GameObject bullet;
     public GameObject player;
@@ -22,7 +23,11 @@ public class Warlock : MonoBehaviour
 
     List<string> attacks;
 
+    public List<Vector2> locations;
+
     public GameObject slimes;
+
+    private int teleportAmount;
     // Start is called before the first frame update
     void Start()
     {
@@ -44,11 +49,6 @@ public class Warlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            SpawnBats();
-        }
-
         timeElapsed += Time.deltaTime;
 
         if (timeElapsed > 2)
@@ -56,7 +56,11 @@ public class Warlock : MonoBehaviour
             timeElapsed = 0;
             curAttackNum += 1;
 
-            if (curAttackNum % 12 == 0)
+            if (curAttackNum % 15 == 0)
+            {
+                animator.Play("warlockTeleOut");
+            }
+            else if (curAttackNum % 12 == 0)
             {
                 animator.Play(attacks[2]);
             }
@@ -79,6 +83,12 @@ public class Warlock : MonoBehaviour
         //     time -= .5f;
         //     Shoot();
         // }
+    }
+
+    public void Teleport() {
+        teleportAmount += 1;
+
+        transform.position = new Vector3 (locations[teleportAmount%locations.Count].x,  locations[teleportAmount%locations.Count].y,transform.position.z);
     }
 
     void Shoot()

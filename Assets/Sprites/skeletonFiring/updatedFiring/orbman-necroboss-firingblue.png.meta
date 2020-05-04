@@ -1,0 +1,925 @@
+fileFormatVersion: 2
+guid: db2fc1a68979ba918b00c08bec40c751
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5369143368119794602
+    second: orbman-necroboss-firingblue_0
+  - first:
+      213: 7910707985088280583
+    second: orbman-necroboss-firingblue_1
+  - first:
+      213: 283883270211311795
+    second: orbman-necroboss-firingblue_2
+  - first:
+      213: 5104265059270071726
+    second: orbman-necroboss-firingblue_3
+  - first:
+      213: 8011000825214937515
+    second: orbman-necroboss-firingblue_4
+  - first:
+      213: -3751185330275666053
+    second: orbman-necroboss-firingblue_5
+  - first:
+      213: -606616865881202686
+    second: orbman-necroboss-firingblue_6
+  - first:
+      213: -8926066116371173462
+    second: orbman-necroboss-firingblue_7
+  - first:
+      213: 760788118386902797
+    second: orbman-necroboss-firingblue_8
+  - first:
+      213: 172766291097294273
+    second: orbman-necroboss-firingblue_9
+  - first:
+      213: 3884877092191374642
+    second: orbman-necroboss-firingblue_10
+  - first:
+      213: -8384349588573775539
+    second: orbman-necroboss-firingblue_11
+  - first:
+      213: -6577596163520957427
+    second: orbman-necroboss-firingblue_12
+  - first:
+      213: 5383445044485738842
+    second: orbman-necroboss-firingblue_13
+  - first:
+      213: 7689764539288992588
+    second: orbman-necroboss-firingblue_14
+  - first:
+      213: -4740587200900170487
+    second: orbman-necroboss-firingblue_15
+  - first:
+      213: -3043147619024582588
+    second: orbman-necroboss-firingblue_16
+  - first:
+      213: -5203765169442855940
+    second: orbman-necroboss-firingblue_17
+  - first:
+      213: 2645123201073137510
+    second: orbman-necroboss-firingblue_18
+  - first:
+      213: 6276244077362775337
+    second: orbman-necroboss-firingblue_19
+  - first:
+      213: 4735507123919229662
+    second: orbman-necroboss-firingblue_20
+  - first:
+      213: 2995256320921019114
+    second: orbman-necroboss-firingblue_21
+  - first:
+      213: 1039846567869553892
+    second: orbman-necroboss-firingblue_22
+  - first:
+      213: 7573223145143501842
+    second: orbman-necroboss-firingblue_23
+  - first:
+      213: -323788755364567361
+    second: orbman-necroboss-firingblue_24
+  - first:
+      213: -3406140332392291281
+    second: orbman-necroboss-firingblue_25
+  - first:
+      213: 6029103149926327478
+    second: orbman-necroboss-firingblue_26
+  - first:
+      213: 6236204461091137647
+    second: orbman-necroboss-firingblue_27
+  - first:
+      213: 7274290201720586259
+    second: orbman-necroboss-firingblue_28
+  - first:
+      213: 8602501887563752534
+    second: orbman-necroboss-firingblue_29
+  - first:
+      213: -3459198877204598184
+    second: orbman-necroboss-firingblue_0
+  - first:
+      213: -7672664964966236808
+    second: orbman-necroboss-firingblue_1
+  - first:
+      213: -8419990436853197110
+    second: orbman-necroboss-firingblue_2
+  - first:
+      213: 3684111604676314184
+    second: orbman-necroboss-firingblue_3
+  - first:
+      213: 4217955940627568743
+    second: orbman-necroboss-firingblue_4
+  - first:
+      213: -976745370569634611
+    second: orbman-necroboss-firingblue_5
+  - first:
+      213: -620781357033950206
+    second: orbman-necroboss-firingblue_6
+  - first:
+      213: 4423081005165290690
+    second: orbman-necroboss-firingblue_7
+  - first:
+      213: 3503617485426731810
+    second: orbman-necroboss-firingblue_8
+  - first:
+      213: 7021617111182207057
+    second: orbman-necroboss-firingblue_9
+  - first:
+      213: 5553021379915264552
+    second: orbman-necroboss-firingblue_10
+  - first:
+      213: 966970276500216345
+    second: orbman-necroboss-firingblue_11
+  - first:
+      213: -4065767407991713697
+    second: orbman-necroboss-firingblue_12
+  - first:
+      213: -1373848345274708936
+    second: orbman-necroboss-firingblue_13
+  - first:
+      213: 2279348090907498770
+    second: orbman-necroboss-firingblue_14
+  - first:
+      213: 1743453145876664267
+    second: orbman-necroboss-firingblue_15
+  - first:
+      213: 8902310823731639705
+    second: orbman-necroboss-firingblue_16
+  - first:
+      213: 5609073436027373494
+    second: orbman-necroboss-firingblue_17
+  - first:
+      213: 3887928161559989512
+    second: orbman-necroboss-firingblue_18
+  - first:
+      213: 4664182814473241416
+    second: orbman-necroboss-firingblue_19
+  - first:
+      213: 7818070280573155284
+    second: orbman-necroboss-firingblue_20
+  - first:
+      213: 2744038791066015021
+    second: orbman-necroboss-firingblue_21
+  - first:
+      213: -8507880287593669895
+    second: orbman-necroboss-firingblue_22
+  - first:
+      213: 7137354940852647688
+    second: orbman-necroboss-firingblue_23
+  - first:
+      213: 2452427537812079171
+    second: orbman-necroboss-firingblue_24
+  - first:
+      213: -4778146581061516518
+    second: orbman-necroboss-firingblue_25
+  - first:
+      213: 1239665217092939262
+    second: orbman-necroboss-firingblue_26
+  - first:
+      213: -2702314415607439011
+    second: orbman-necroboss-firingblue_27
+  - first:
+      213: -2950790143125289744
+    second: orbman-necroboss-firingblue_28
+  - first:
+      213: 4887900282657106834
+    second: orbman-necroboss-firingblue_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8523ac4e2f47effc0800000000000000
+      internalID: -3459198877204598184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87d3a9aadd7358590800000000000000
+      internalID: -7672664964966236808
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac6dd270f4f262b80800000000000000
+      internalID: -8419990436853197110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84440a53cf7902330800000000000000
+      internalID: 3684111604676314184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_4
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 768da5f8490398a30800000000000000
+      internalID: 4217955940627568743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_5
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc803fa247e172f0800000000000000
+      internalID: -976745370569634611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_6
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2047ec215aa8267f0800000000000000
+      internalID: -620781357033950206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_7
+      rect:
+        serializedVersion: 2
+        x: 224
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c4a7ad5db0f16d30800000000000000
+      internalID: 4423081005165290690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_8
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b25bf3a895f9030800000000000000
+      internalID: 3503617485426731810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_9
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 158e1dc7f8bc17160800000000000000
+      internalID: 7021617111182207057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_10
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822bffb168b401d40800000000000000
+      internalID: 5553021379915264552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_11
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91a182fd75e5b6d00800000000000000
+      internalID: 966970276500216345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_12
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f501b43751e7397c0800000000000000
+      internalID: -4065767407991713697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83c84ac753c1fece0800000000000000
+      internalID: -1373848345274708936
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 219910e130fd1af10800000000000000
+      internalID: 2279348090907498770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bcf0482266df13810800000000000000
+      internalID: 1743453145876664267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 995b3a8178c5b8b70800000000000000
+      internalID: 8902310823731639705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_17
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b7cd79629e67dd40800000000000000
+      internalID: 5609073436027373494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_18
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80d45065012b4f530800000000000000
+      internalID: 3887928161559989512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_19
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 843c820de818ab040800000000000000
+      internalID: 4664182814473241416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_20
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d7f99e8f7d5f7c60800000000000000
+      internalID: 7818070280573155284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_21
+      rect:
+        serializedVersion: 2
+        x: 672
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d25d16fedb8c41620800000000000000
+      internalID: 2744038791066015021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_22
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fa5e6284ffede980800000000000000
+      internalID: -8507880287593669895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_23
+      rect:
+        serializedVersion: 2
+        x: 736
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 807b66dd08afc0360800000000000000
+      internalID: 7137354940852647688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_24
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 342cca42ad5c80220800000000000000
+      internalID: 2452427537812079171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_25
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a13c41f000d90bdb0800000000000000
+      internalID: -4778146581061516518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_26
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd6b3962fc243110800000000000000
+      internalID: 1239665217092939262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_27
+      rect:
+        serializedVersion: 2
+        x: 864
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d512d424b537f7ad0800000000000000
+      internalID: -2702314415607439011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_28
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f40b40bfffac07d0800000000000000
+      internalID: -2950790143125289744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orbman-necroboss-firingblue_29
+      rect:
+        serializedVersion: 2
+        x: 928
+        y: 0
+        width: 32
+        height: 40
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29bee4de86f45d340800000000000000
+      internalID: 4887900282657106834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

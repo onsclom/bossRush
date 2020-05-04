@@ -106,7 +106,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1348195580706299982}
-  - {fileID: 632624848627747652}
+  - {fileID: 2748319002966850228}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -252,7 +252,8 @@ MonoBehaviour:
   bossHealthUI: {fileID: 0}
   healthBar: {fileID: 0}
   spawnTime: 0
---- !u!1001 &1226596641673704417
+  timeSinceHit: 0
+--- !u!1001 &4603182693098996241
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -282,7 +283,7 @@ PrefabInstance:
     - target: {fileID: 1856107393644968101, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: -0
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1856107393644968101, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
@@ -327,7 +328,7 @@ PrefabInstance:
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: EmissionModule.rateOverTime.scalar
-      value: 250
+      value: 175
       objectReference: {fileID: 0}
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
@@ -342,22 +343,22 @@ PrefabInstance:
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
-      value: 1
+      value: 0.69411767
       objectReference: {fileID: 0}
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.g
-      value: 0.04995039
+      value: 0.24313726
       objectReference: {fileID: 0}
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
-      value: 0
+      value: 0.3254902
       objectReference: {fileID: 0}
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: InitialModule.startSize.scalar
-      value: 0.1
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
@@ -374,6 +375,26 @@ PrefabInstance:
       propertyPath: playOnAwake
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
+        type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
+        type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
+        type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2056558697080283605, guid: 20bcb1c88a28c440d996a2883a1433f4,
+        type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 3234410827433782082, guid: 20bcb1c88a28c440d996a2883a1433f4,
         type: 3}
       propertyPath: m_Name
@@ -386,9 +407,9 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: f5ec88a687cc6d9448380f21861d57ab, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 20bcb1c88a28c440d996a2883a1433f4, type: 3}
---- !u!4 &632624848627747652 stripped
+--- !u!4 &2748319002966850228 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1856107393644968101, guid: 20bcb1c88a28c440d996a2883a1433f4,
     type: 3}
-  m_PrefabInstance: {fileID: 1226596641673704417}
+  m_PrefabInstance: {fileID: 4603182693098996241}
   m_PrefabAsset: {fileID: 0}

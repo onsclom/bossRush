@@ -285,7 +285,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: d92ced996579641e89577280eb18a6ed, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 8a95beddd72099ba6addb1cb72893c2c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -408,6 +408,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: warlockman
       objectReference: {fileID: 0}
+    - target: {fileID: 3905714291898560486, guid: 0192bb632df24bfd28995e894fb7d126,
+        type: 3}
+      propertyPath: health
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3905714291898560487, guid: 0192bb632df24bfd28995e894fb7d126,
         type: 3}
       propertyPath: m_Offset.y
@@ -491,6 +496,10 @@ MonoBehaviour:
   player: {fileID: 0}
   offset: {x: 0, y: 0}
   bats: {fileID: 844718667733690746, guid: b0ddeb95c4811a9279226ee057373169, type: 3}
+  locations:
+  - {x: 0, y: 19.7}
+  - {x: -16, y: 7}
+  - {x: 16, y: 7}
   slimes: {fileID: 3284660616569537892, guid: 10571f9f2fdd2cbcc873e69a7f051a41, type: 3}
 --- !u!1 &1963022149
 GameObject:

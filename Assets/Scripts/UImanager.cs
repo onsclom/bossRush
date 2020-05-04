@@ -6,8 +6,8 @@ using UnityEngine.UI;
 public class UImanager : MonoBehaviour
 {
     public List<UnityEngine.UI.Image> health;
-    public Color active;
-    public Color inactive;
+    public Sprite active;
+    public Sprite inactive;
     public CharacterController character;
     // Start is called before the first frame update
     void Start()
@@ -22,11 +22,11 @@ public class UImanager : MonoBehaviour
         {
             if (character.health>x)
             {
-                health[x].color = active;
+                health[x].GetComponent<Image>().sprite = active;
             }
             else
             {
-                health[x].color = inactive;
+                health[x].GetComponent<Image>().sprite = inactive;
             }
         }
     }

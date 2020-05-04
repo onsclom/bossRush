@@ -36,6 +36,13 @@ public class CharacterController : MonoBehaviour
     private bool ranOut = false;
     private HashSet<GameObject> thingsHit;
 
+    private Animator animator;
+
+    public GameObject explosionSound;
+    public GameObject chargedSound;
+    public GameObject teleportSound;
+    public GameObject hurtSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,6 +52,7 @@ public class CharacterController : MonoBehaviour
         particles = ball.transform.Find("Particle System").gameObject.GetComponent<ParticleSystem>();
         charging = ball.transform.Find("charging").gameObject.GetComponent<ParticleSystem>();
         charged = ball.transform.Find("charged").gameObject.GetComponent<ParticleSystem>();
+        animator = transform.Find("Person").gameObject.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -53,6 +61,23 @@ public class CharacterController : MonoBehaviour
         h = Input.GetAxisRaw("Horizontal");
         v = Input.GetAxisRaw("Vertical");
 
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            print("Wow");
+            animator.Play("teleportOut");
+        }
+
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("New Animation") && (h!=0 || v!=0))
+        {
+            print("running");
+            animator.Play("running");
+        }
+        else if (animator.GetCurrentAnimatorStateInfo(0).IsName("running") && h==0 && v==0)
+        {
+            print("idling");
+            animator.Play("New Animation");
+        }
+
         attackingTime += Time.deltaTime;
 
         if (Input.GetKeyDown(KeyCode.M))
@@ -60,6 +85,7 @@ public class CharacterController : MonoBehaviour
             if (curMana>= 33)
             {
                 particles.Play();
+                Instantiate(explosionSound);
                 attackingTime = 0;
                 sceenShake.setShake();
                 curMana -= 33;
@@ -71,13 +97,9 @@ public class CharacterController : MonoBehaviour
             //switch locations teleport thing
             if (curMana >= 20f)
             {
-                Vector3 oldOrbPos = ball.transform.position;
-                ball.transform.position = character.transform.position;
-                character.transform.position = oldOrbPos;
-
-                ball.GetComponent<TrailRenderer>().Clear();
-
                 curMana -= 20;
+                animator.Play("teleportOut");
+                Instantiate(teleportSound);
             }
         }
 
@@ -106,10 +128,11 @@ public class CharacterController : MonoBehaviour
         {
             chargedTime += Time.deltaTime;
 
-            if (!isCharged && chargedTime > 1)
+            if (!isCharged && chargedTime > .66)
             {
                 isCharged = true;
                 charged.Play();
+                Instantiate(chargedSound);
                 charging.Stop();
 
                 character.transform.Find("Indicator").GetComponent<SpriteRenderer>().color = chargedIndicatorColor;
@@ -187,6 +210,15 @@ public class CharacterController : MonoBehaviour
 
         curMana = Mathf.Min(100f, curMana);
         curMana = Mathf.Max(0f, curMana);
+    }
+
+    public void Teleport()
+    {
+        Vector3 oldOrbPos = ball.transform.position;
+        ball.transform.position = character.transform.position;
+        character.transform.position = oldOrbPos;
+
+        ball.GetComponent<TrailRenderer>().Clear();
     }
 
     void FixedUpdate()
@@ -288,5 +320,7 @@ public class CharacterController : MonoBehaviour
         invincibleTime = 2;
 
         health -= 1;
+
+        Instantiate(hurtSound);
     }
 }
