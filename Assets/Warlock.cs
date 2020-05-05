@@ -28,9 +28,13 @@ public class Warlock : MonoBehaviour
     public GameObject slimes;
 
     private int teleportAmount;
+
+    public bool triggered;
     // Start is called before the first frame update
     void Start()
     {
+        triggered = false;
+
         attacks = new List<string>();
         attacks.Add("warlockBlueAttack");
         attacks.Add("warlockGreenAttack");
@@ -49,6 +53,9 @@ public class Warlock : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!triggered)
+            return;
+
         timeElapsed += Time.deltaTime;
 
         if (timeElapsed > 2)

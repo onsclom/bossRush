@@ -42,6 +42,7 @@ public class CharacterController : MonoBehaviour
     public GameObject chargedSound;
     public GameObject teleportSound;
     public GameObject hurtSound;
+    public BossActivate bossAnimationThing;
 
     // Start is called before the first frame update
     void Start()
@@ -210,6 +211,11 @@ public class CharacterController : MonoBehaviour
 
         curMana = Mathf.Min(100f, curMana);
         curMana = Mathf.Max(0f, curMana);
+    }
+
+    public void playBossAnimation()
+    {
+        bossAnimationThing.runAnim();
     }
 
     public void Teleport()
