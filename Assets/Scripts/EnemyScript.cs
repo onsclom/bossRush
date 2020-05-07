@@ -17,6 +17,8 @@ public class EnemyScript : MonoBehaviour
 
     public float timeSinceHit;
 
+    public bool scareCrow;
+
 
     void Start()
     {
@@ -51,6 +53,13 @@ public class EnemyScript : MonoBehaviour
 
     public void hit(GameObject orb)
     {
+        if (scareCrow)
+        {
+            print("WOW");
+            gameObject.GetComponent<Animator>().Play("scarecrowHit");
+            return;
+        }
+
         timeSinceHit = 0;
 
         health -= 1;
@@ -73,7 +82,7 @@ public class EnemyScript : MonoBehaviour
         gameObject.GetComponent<Rigidbody2D>().AddForce(dir * -200);
 
 
-        if (health == 0)
+        if (health == 0 && !scareCrow)
         {
             var particles = transform.Find("Particle System").gameObject;
             particles.transform.parent=transform.parent;
@@ -92,7 +101,7 @@ public class EnemyScript : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D col) {
  
-        if (col.gameObject.tag == "Player")
+        if (col.gameObject.tag == "Player" && !scareCrow)
             col.gameObject.transform.parent.gameObject.GetComponent<CharacterController>().hit(transform);
     }
 }

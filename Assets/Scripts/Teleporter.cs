@@ -22,7 +22,7 @@ public class Teleporter : MonoBehaviour
         print("wow");
         if (other.gameObject.tag == "Player")
         {
-            transition.Play("fadeOut");
+         //   transition.Play("fadeOut");
             print("TELEPORT");
 
             DontDestroyOnLoad(GameObject.Find("GameManager"));
